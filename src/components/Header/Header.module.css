@@ -1,0 +1,121 @@
+header {
+  position: sticky;
+  background-color: #1a2954;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid #ccc;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.brandContainer {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.brandLogo {
+  margin-right: 8px;
+}
+
+.navMenuDesktop {
+  display: flex;
+  align-items: center;
+}
+
+.navMenuDesktop ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.navMenuDesktop li {
+  margin-right: 16px;
+}
+
+.navMenuDesktop li:last-child {
+  margin-right: 0;
+}
+
+.navMenuMobile {
+  display: none;
+  direction: rtl;
+}
+
+@media (max-width: 768px) {
+  .navMenuDesktop {
+    display: none;
+  }
+
+  .navMenuMobile {
+    display: block;
+  }
+}
+
+.navMenuMobile {
+  position: relative;
+  width: 100%;
+  max-width: 100px;
+}
+
+.navMenuMobile summary::marker {
+  display: none;
+  content: "≡";
+  font-size: 3rem;
+  color: #fff;
+}
+
+.navMenuMobile details[open] summary::marker {
+  content: "×";
+}
+
+.navMenuMobile summary {
+  cursor: pointer;
+}
+
+.navMenuMobile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1a2954;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.navMenuDesktop li,
+.navMenuMobile li {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.navMenuDesktop li:hover{
+  background-color: #f5900c;
+  border-radius: 5px;
+}
+.navMenuMobile li:hover {
+  background-color: #f5900c;
+}
